@@ -70,32 +70,68 @@
 <body class="bg-white text-gray-800">
 
     <!-- Navigation -->
-    <header class="w-full fixed top-0 bg-white/90 backdrop-blur-md z-50 border-b border-gray-100">
+    <header class="w-full fixed top-0 bg-white z-[100] border-b border-gray-100">
         <nav class="py-4">
-            <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between px-4">
-                <a href="#" id="logo"
-                    class="text-2xl font-bold text-amber-600 archivo hover:scale-105 transition-transform">
+            <div class="mx-auto flex max-w-screen-xl items-center justify-between px-4">
+                <!-- Logo - stays on top -->
+                <a href="index.html" class="text-2xl font-bold text-amber-600 archivo z-[200]">
                     [A.]
                 </a>
-                <div>
-                    <ul class="flex flex-row space-x-6 lg:space-x-8 items-center text-sm lg:text-base"
-                        id="navigation-links">
-                        <li><a href="#about" class="hover:text-amber-600 transition">About</a></li>
-                        <li><a href="#education" class="hover:text-amber-600 transition">Education</a></li>
-                        <li><a href="#tech-stack" class="hover:text-amber-600 transition">Stack</a></li>
-                        <li><a href="#projects" class="hover:text-amber-600 transition">Projects</a></li>
+
+                <!-- Desktop Links -->
+                <div class="hidden md:block">
+                    <ul class="flex flex-row space-x-8 items-center text-base">
+                        <li><a href="index.html#about" class="hover:text-amber-600 transition">About</a></li>
+                        <li><a href="index.html#education" class="hover:text-amber-600 transition">Education</a></li>
+                        <li><a href="index.html#tech-stack" class="hover:text-amber-600 transition">Stack</a></li>
+                        <li><a href="index.html#projects" class="hover:text-amber-600 transition">Projects</a></li>
+                        <li><a href="index.html#contact" class="hover:text-amber-600 transition">Contact</a></li>
                         <li>
-                            <!-- Updated Resume Link -->
-                            <a href="../Ostan_Resume_MULAVESTUDIOS.pdf" target="_blank" rel="noopener noreferrer"
+                            <a href="../Ostan_Resume_MULAVESTUDIOS.pdf" target="_blank"
                                 class="border-2 px-4 py-2 border-amber-500 rounded-sm hover:bg-amber-500 hover:text-white transition font-bold">
                                 Resume
                             </a>
+                        </li>
                     </ul>
                 </div>
+
+                <!-- Hamburger Button - stays on top -->
+                <button id="menu-btn" class="block md:hidden z-[200] text-amber-600 focus:outline-none">
+                    <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 hidden" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
         </nav>
-    </header>
 
+        <!-- Full-Screen Mobile Menu Overlay -->
+        <!-- Added: h-screen, top-0, left-0, bg-white (solid) -->
+        <div id="mobile-menu"
+            class="fixed top-0 left-0 w-full h-screen bg-white translate-x-full transition-transform duration-500 ease-in-out z-[150] flex flex-col justify-center items-center md:hidden">
+            <ul class="flex flex-col space-y-10 items-center text-3xl archivo uppercase tracking-[0.2em] text-center">
+                <li><a href="index.html#about" class="mobile-link hover:text-amber-600 transition">About</a></li>
+                <li><a href="index.html#education" class="mobile-link hover:text-amber-600 transition">Education</a>
+                </li>
+                <li><a href="index.html#tech-stack" class="mobile-link hover:text-amber-600 transition">Stack</a></li>
+                <li><a href="index.html#projects" class="mobile-link hover:text-amber-600 transition">Projects</a></li>
+                <li><a href="index.html#contact" class="mobile-link hover:text-amber-600 transition">Contact</a></li>
+                <li class="pt-6">
+                    <a href="../Ostan_Resume_MULAVESTUDIOS.pdf" target="_blank"
+                        class="border-2 px-10 py-4 border-amber-500 rounded-sm text-amber-600 hover:bg-amber-500 hover:text-white transition font-bold">
+                        Resume
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    
     <main class="mx-auto max-w-screen-xl px-4 pt-32 pb-24">
 
         <!-- Project Hero -->
@@ -303,6 +339,8 @@
             }
         });
     </script>
+
+    <script src="./javascript/mobile-nav.js"></script>
 
 </body>
 
