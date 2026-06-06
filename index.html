@@ -5,136 +5,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angeline Ostan | Portfolio</title>
-    
-    <!-- Tailwind v4 CDN -->
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Courier+Prime:wght@400;700&display=swap"
+        rel="stylesheet">
 
-    <!-- Devicon & AOS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <style>
-        :root {
-            --accent: #f59e0b; /* Amber 500 */
-            --bg-dark: #020617;
-            --bg-light: #ffffff;
-        }
-
-        body { font-family: 'Courier Prime', monospace; transition: background-color 0.5s ease; }
-        h1, h2, h3, h4, .font-archivo { font-family: 'Archivo', sans-serif; font-weight: 900; letter-spacing: -0.03em; }
-
-        /* Custom Background Grid */
-        .grid-bg {
-            background-image: radial-gradient(rgba(245, 158, 11, 0.1) 1px, transparent 1px);
-            background-size: 30px 30px;
-        }
-
-        /* Glass Effect */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .light .glass-panel {
-            background: rgba(0, 0, 0, 0.02);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        /* Floating Animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-        .animate-float { animation: float 6s ease-in-out infinite; }
-
-        /* Modern Scrollbar */
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: var(--bg-dark); }
-        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
-
-        /* Text Gradient */
-        .text-gradient {
-            background: linear-gradient(to right, #fff, var(--accent), #fbbf24);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .light .text-gradient {
-            background: linear-gradient(to right, #0f172a, #d97706, #b45309);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/theme.css">
+    <link rel="stylesheet" href="./css/animations.css">
 </head>
 
-<body class="bg-[#020617] text-slate-300 selection:bg-amber-500/30">
+<body>
+    <script>if(localStorage.getItem('theme')==='light')document.body.classList.add('light');</script>
 
-    <!-- Subtle Background Elements -->
-    <div class="fixed inset-0 z-[-1] grid-bg opacity-30"></div>
-    <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-amber-500/10 blur-[120px] rounded-full"></div>
+    <div class="fixed inset-0 z-[-1] grid-bg"></div>
+    <div class="fixed top-[-10%] left-[-10%] w-[70%] md:w-[40%] h-[40%] bg-amber-500/10 blur-[120px] rounded-full">
+    </div>
     <div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/10 blur-[120px] rounded-full"></div>
 
-    <!-- Nav: Floating Island -->
-    <header class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-4xl z-[100]">
-        <nav class="glass-panel px-6 py-3 rounded-full flex items-center justify-between shadow-2xl">
-            <a href="#" class="text-2xl font-archivo font-black text-amber-500">A<span class="text-slate-100">.</span></a>
-            
-            <ul class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest">
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-4xl z-[100]">
+        <nav class="glass-panel px-5 py-3 rounded-full flex items-center justify-between shadow-xl relative">
+            <a href="index.html" class="text-2xl font-archivo font-black text-amber-500">A<span class="text-current">.</span></a>
+
+            <ul class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-[0.2em] secondary-text">
                 <li><a href="#about" class="hover:text-amber-500 transition">About</a></li>
                 <li><a href="#tech" class="hover:text-amber-500 transition">Stack</a></li>
                 <li><a href="#projects" class="hover:text-amber-500 transition">Works</a></li>
                 <li><a href="#contact" class="hover:text-amber-500 transition">Contact</a></li>
             </ul>
 
-            <div class="flex items-center gap-4">
-                <button id="theme-toggle" class="p-2 hover:bg-white/10 rounded-full transition cursor-pointer">
-                    <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle"
+                    class="p-2 secondary-text hover:bg-amber-500/10 rounded-full transition cursor-pointer">
+                    <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                 </button>
-                <a href="Ostan_Resume.pdf" class="bg-amber-500 text-slate-950 px-5 py-2 rounded-full text-xs font-bold uppercase hover:scale-105 transition active:scale-95">Resume</a>
+                <a href="Ostan_Resume.pdf" download
+                    class="hidden sm:block bg-amber-500 text-slate-950 px-5 py-2 rounded-full text-sm font-bold uppercase shadow-lg hover:scale-105 transition active:scale-95">Resume</a>
+
+                <button id="menu-toggle" class="md:hidden p-2 secondary-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                class="absolute top-[120%] left-0 w-full glass-panel rounded-3xl p-6 flex-col gap-4 md:hidden shadow-2xl">
+                <a href="#about" class="text-sm font-bold uppercase tracking-widest py-2">About</a>
+                <a href="#tech" class="text-sm font-bold uppercase tracking-widest py-2">Stack</a>
+                <a href="#projects" class="text-sm font-bold uppercase tracking-widest py-2">Works</a>
+                <a href="#contact" class="text-sm font-bold uppercase tracking-widest py-2">Contact</a>
             </div>
         </nav>
     </header>
 
     <main class="max-w-screen-xl mx-auto px-6">
 
-        <!-- HERO SECTION -->
         <section id="about" class="min-h-screen flex flex-col justify-center pt-20">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <div class="inline-block px-3 py-1 border border-amber-500/30 rounded-full bg-amber-500/5 text-amber-500 text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
-                        Available for Internship 2026
-                    </div>
-                    <h1 class="text-6xl md:text-8xl leading-none mb-6">
-                        Building the <br>
-                        <span class="text-gradient">Future Web.</span>
+                    <h1 class="text-6xl md:text-8xl leading-none mb-6 hero-title">
+                        Angeline <br>
+                        <span class="text-amber-500">Ostan.</span>
                     </h1>
-                    <p class="text-lg text-slate-400 max-w-lg mb-8 leading-relaxed">
-                        I'm <span class="text-white font-bold">Angeline Ostan</span>, a Full-Stack developer & AI enthusiast. I specialize in turning complex logic into elegant, human-centric digital interfaces.
+                    <p class="text-lg secondary-text max-w-lg mb-8 leading-relaxed">
+                        Recent IT graduate • Aspiring Web Developer.
+                        Dedicated to crafting elegant, high-performance web experiences and interactive digital
+                        solutions.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="px-8 py-4 bg-white text-slate-950 rounded-xl font-archivo uppercase text-sm font-black hover:bg-amber-500 transition-all">Explore Projects</a>
-                        <a href="#contact" class="px-8 py-4 glass-panel rounded-xl font-archivo uppercase text-sm font-black hover:bg-white/10 transition-all">Get in touch</a>
+                        <a href="#projects"
+                            class="w-full sm:w-auto text-center px-8 py-4 bg-amber-500 text-slate-950 rounded-xl font-archivo uppercase text-sm font-black shadow-xl hover:-translate-y-1 transition-all">Explore
+                            Projects</a>
+                        <a href="#contact"
+                            class="w-full sm:w-auto text-center px-8 py-4 glass-panel rounded-xl font-archivo uppercase text-sm font-black hover:bg-amber-500/10 transition-all">Get
+                            in touch</a>
                     </div>
                 </div>
 
                 <div class="relative flex justify-center lg:justify-end" data-aos="zoom-in">
                     <div class="relative w-80 h-96 group">
-                        <div class="absolute -inset-4 bg-amber-500/20 blur-2xl rounded-full group-hover:bg-amber-500/40 transition"></div>
-                        <div class="relative h-full w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                            <img src="./images/ID Picture2.png" alt="Profile" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                        <div
+                            class="absolute -inset-4 bg-amber-500/20 blur-2xl rounded-full group-hover:bg-amber-500/40 transition">
                         </div>
-                        <!-- Floating Tech Tags -->
-                        <div class="absolute -top-6 -right-6 glass-panel p-4 rounded-xl animate-float">
+                        <div
+                            class="relative h-full w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                            <img src="./images/ID Picture2.png" alt="Profile"
+                                class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                        </div>
+
+                        <div class="absolute -top-6 -right-6 glass-panel p-4 rounded-xl animate-float shadow-xl">
                             <i class="devicon-python-plain text-3xl text-amber-500"></i>
                         </div>
-                        <div class="absolute -bottom-6 -left-6 glass-panel p-4 rounded-xl animate-float" style="animation-delay: -2s">
+                        <div class="absolute -bottom-6 -left-6 glass-panel p-4 rounded-xl animate-float shadow-xl"
+                            style="animation-delay: -2s">
                             <i class="devicon-tailwindcss-original text-3xl text-blue-400"></i>
                         </div>
                     </div>
@@ -142,127 +118,228 @@
             </div>
         </section>
 
-        <!-- TECH STACK: BENTO GRID -->
         <section id="tech" class="py-24">
-            <h2 class="text-4xl mb-12 flex items-center gap-4">
-                <span class="text-amber-500 text-sm font-mono tracking-tighter">01/</span>
-                Stack & Tools
+            <h2 class="text-3xl md:text-4xl mb-12 flex items-center gap-4 hero-title">
+                <span class="text-amber-500 text-sm font-mono font-normal tracking-tighter">01/</span> Stack
             </h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <!-- Large Bento Item -->
-                <div class="col-span-2 row-span-2 glass-panel rounded-3xl p-8 flex flex-col justify-between hover:border-amber-500/50 transition group" data-aos="fade-up">
+
+            <!-- The Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[minmax(160px,auto)]">
+
+                <!-- 01. Languages & Frameworks -->
+                <div class="md:col-span-8 md:row-span-2 glass-panel rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between relative overflow-hidden group border border-white/5 shadow-2xl"
+                    data-aos="fade-up">
+                    <div class="relative z-10 mb-8">
+                        <h3 class="text-3xl md:text-4xl hero-title mb-4">Languages & Frameworks</h3>
+                        <p class="secondary-text font-mono text-sm max-w-sm leading-relaxed">
+                            Building robust logic and dynamic interfaces using modern tech.
+                        </p>
+                    </div>
+
+                    <!-- Grid of Icons -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
+                        <div class="flex flex-col items-center group/item cursor-default">
+                            <i
+                                class="devicon-python-plain text-4xl secondary-text group-hover/item:text-amber-500 transition-colors mb-2"></i>
+                            <p class="text-base font-bold hero-title leading-none">Python</p>
+                        </div>
+                        <div class="flex flex-col items-center group/item cursor-default">
+                            <i
+                                class="devicon-php-plain text-4xl secondary-text group-hover/item:text-indigo-400 transition-colors mb-2"></i>
+                            <p class="text-base font-bold hero-title leading-none">PHP</p>
+                        </div>
+                        <div class="flex flex-col items-center group/item cursor-default">
+                            <i
+                                class="devicon-javascript-plain text-4xl secondary-text group-hover/item:text-yellow-400 transition-colors mb-2"></i>
+                            <p class="text-base font-bold hero-title leading-none">JavaScript</p>
+                        </div>
+                        <div class="flex flex-col items-center group/item cursor-default">
+                            <i
+                                class="devicon-html5-plain text-4xl secondary-text group-hover/item:text-orange-500 transition-colors mb-2"></i>
+                            <p class="text-base font-bold hero-title leading-none">HTML5</p>
+                        </div>
+                        <div class="flex flex-col items-center group/item cursor-default">
+                            <i
+                                class="devicon-tailwindcss-original text-4xl secondary-text group-hover/item:text-cyan-400 transition-colors mb-2"></i>
+                            <p class="text-base font-bold hero-title leading-none">Tailwind</p>
+                        </div>
+                        <div class="flex flex-col items-center group/item cursor-default">
+                            <i
+                                class="devicon-bootstrap-plain text-4xl secondary-text group-hover/item:text-purple-500 transition-colors mb-2"></i>
+                            <p class="text-base font-bold hero-title leading-none">Bootstrap</p>
+                        </div>
+                        <div class="flex flex-col items-center group/item cursor-default">
+                            <i
+                                class="devicon-flask-original text-4xl secondary-text group-hover/item:text-white transition-colors mb-2"></i>
+                            <p class="text-base font-bold hero-title leading-none">Flask</p>
+                        </div>
+                        <div class="flex flex-col items-center group/item cursor-default">
+                            <i
+                                class="devicon-css3-plain text-4xl secondary-text group-hover/item:text-blue-500 transition-colors mb-2"></i>
+                            <p class="text-base font-bold hero-title leading-none">CSS3</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute -bottom-12 -right-8 opacity-[0.07] group-hover:opacity-[0.12] transition-opacity pointer-events-none">
+                        <i class="devicon-python-plain text-[280px]"></i>
+                    </div>
+                </div>
+
+                <!-- 02. Databases & Cloud -->
+                <div class="md:col-span-4 md:row-span-2 glass-panel rounded-[2.5rem] p-8 md:p-10 flex flex-col relative overflow-hidden group border border-white/5 shadow-2xl"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative z-10 mb-10">
+                        <h3 class="text-3xl md:text-4xl hero-title mb-4">Databases & Cloud</h3>
+                        <p class="secondary-text font-mono text-sm leading-relaxed">
+                            Managing data architecture and cloud deployments.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col gap-8 relative z-10">
+                        <!-- MySQL -->
+                        <div class="flex items-center gap-5 group/item">
+                            <i
+                                class="devicon-mysql-plain text-4xl secondary-text group-hover/item:text-blue-400 transition-colors"></i>
+                            <div>
+                                <p class="text-base font-bold hero-title leading-none">MySQL</p>
+                                <p class="text-xs secondary-text uppercase tracking-widest mt-1">Relational DB</p>
+                            </div>
+                        </div>
+                        <!-- Firebase -->
+                        <div class="flex items-center gap-5 group/item">
+                            <i
+                                class="devicon-firebase-plain text-4xl secondary-text group-hover/item:text-orange-500 transition-colors"></i>
+                            <div>
+                                <p class="text-base font-bold hero-title leading-none">Firebase</p>
+                                <p class="text-xs secondary-text uppercase tracking-widest mt-1">Real-time DB</p>
+                            </div>
+                        </div>
+                        <!-- GCP -->
+                        <div class="flex items-center gap-5 group/item">
+                            <i
+                                class="devicon-googlecloud-plain text-4xl secondary-text group-hover/item:text-red-400 transition-colors"></i>
+                            <div>
+                                <p class="text-base font-bold hero-title leading-none">GCP</p>
+                                <p class="text-xs secondary-text uppercase tracking-widest mt-1">Cloud Hosting</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute -bottom-6 -right-6 opacity-[0.05] group-hover:opacity-[0.1] transition-all duration-500 pointer-events-none">
+                        <i class="devicon-googlecloud-plain text-[180px]"></i>
+                    </div>
+                </div>
+
+                <!-- 03. AI & CV -->
+                <div class="md:col-span-4 md:row-span-1 glass-panel rounded-[2.5rem] p-8 md:p-10 flex items-center justify-between group border border-white/5 shadow-xl hover:border-amber-500/20 transition"
+                    data-aos="fade-up" data-aos-delay="200">
                     <div>
-                        <h3 class="text-2xl mb-2">Frontend Engineering</h3>
-                        <p class="text-sm text-slate-400">Crafting responsive, pixel-perfect UIs with modern frameworks.</p>
+                        <h3 class="text-2xl hero-title mb-1">AI & CV</h3>
+                        <p class="secondary-text text-xs font-bold uppercase tracking-[0.3em]">Computer Vision</p>
                     </div>
-                    <div class="flex gap-6 text-4xl mt-8">
-                        <i class="devicon-html5-plain hover:text-orange-500 transition"></i>
-                        <i class="devicon-tailwindcss-original hover:text-cyan-400 transition"></i>
-                        <i class="devicon-javascript-plain hover:text-yellow-400 transition"></i>
-                        <i class="devicon-bootstrap-plain hover:text-purple-500 transition"></i>
+                    <div class="flex flex-col items-center">
+                        <i
+                            class="devicon-tensorflow-original text-4xl secondary-text group-hover:text-amber-500 transition-colors mb-2"></i>
+                        <p class="text-base font-bold hero-title leading-none">TensorFlow</p>
                     </div>
                 </div>
 
-                <!-- AI/ML Box -->
-                <div class="col-span-2 glass-panel rounded-3xl p-8 flex items-center justify-between hover:border-amber-500/50 transition" data-aos="fade-up" data-aos-delay="100">
-                    <div>
-                        <h3 class="text-xl">Intelligence</h3>
-                        <p class="text-xs text-slate-400">TensorFlow & OpenCV</p>
+                <!-- 04. Design Stack -->
+                <div class="md:col-span-8 md:row-span-1 glass-panel rounded-[2.5rem] p-8 md:p-10 flex items-center justify-between group border border-white/5 shadow-xl hover:border-amber-500/20 transition"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex gap-8">
+                        <div class="flex flex-col items-center group/item">
+                            <i
+                                class="devicon-vscode-plain text-4xl secondary-text group-hover:text-blue-500 transition-colors mb-2"></i>
+                            <p class="text-base font-bold hero-title leading-none">VS Code</p>
+                        </div>
+                        <div class="flex flex-col items-center group/item">
+                            <i
+                                class="devicon-figma-plain text-4xl secondary-text group-hover:text-purple-500 transition-colors mb-2"></i>
+                            <p class="text-base font-bold hero-title leading-none">Figma</p>
+                        </div>
+                        <div class="flex flex-col items-center group/item">
+                            <i
+                                class="devicon-canva-plain text-4xl secondary-text group-hover:text-cyan-400 transition-colors mb-2"></i>
+                            <p class="text-base font-bold hero-title leading-none">Canva</p>
+                        </div>
+                        <div class="flex flex-col items-center group/item">
+                            <i
+                                class="devicon-git-plain text-4xl secondary-text group-hover:text-orange-600 transition-colors mb-2"></i>
+                            <p class="text-base font-bold hero-title leading-none">Git</p>
+                        </div>
                     </div>
-                    <i class="devicon-tensorflow-original text-5xl text-amber-500/50 group-hover:text-amber-500 transition"></i>
+                    <div class="text-right">
+                        <h3 class="text-2xl hero-title mb-1">Design Stack</h3>
+                        <p class="secondary-text text-xs font-bold uppercase tracking-[0.3em]">Tools I use daily</p>
+                    </div>
                 </div>
 
-                <!-- Backend -->
-                <div class="glass-panel rounded-3xl p-6 hover:border-amber-500/50 transition text-center" data-aos="fade-up" data-aos-delay="200">
-                    <i class="devicon-php-plain text-4xl block mb-4"></i>
-                    <span class="text-xs font-bold uppercase">PHP / MySQL</span>
-                </div>
-
-                <!-- Python -->
-                <div class="glass-panel rounded-3xl p-6 hover:border-amber-500/50 transition text-center" data-aos="fade-up" data-aos-delay="300">
-                    <i class="devicon-python-plain text-4xl block mb-4"></i>
-                    <span class="text-xs font-bold uppercase">Python / Flask</span>
-                </div>
             </div>
         </section>
 
-        <!-- PROJECTS SECTION -->
         <section id="projects" class="py-24">
             <div class="flex justify-between items-end mb-12">
-                <h2 class="text-4xl flex items-center gap-4">
-                    <span class="text-amber-500 text-sm font-mono tracking-tighter">02/</span>
-                    Selected Works
+                <h2 class="text-3xl md:text-4xl flex items-center gap-4 hero-title">
+                    <span class="text-amber-500 text-sm font-mono font-normal">02/</span> Works
                 </h2>
-                <a href="#" class="text-xs font-bold uppercase border-b border-amber-500 text-amber-500 pb-1 hover:text-white hover:border-white transition">View All Projects</a>
+                <a href="projects.html"
+                    class="text-amber-500 hover:text-amber-400 transition text-sm font-bold uppercase tracking-widest">View
+                    All</a>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-10">
-                <!-- Project 1 -->
-                <div class="group relative" data-aos="fade-up">
-                    <div class="relative aspect-video rounded-3xl overflow-hidden border border-white/10 mb-6">
-                        <img src="./images/LiterariaLandingPage.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Literaria">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <p class="text-amber-500 text-[10px] font-bold uppercase tracking-widest mb-1">Adaptive Learning Platform</p>
-                            <h3 class="text-2xl group-hover:text-amber-500 transition">Literaria</h3>
+            <div class="grid md:grid-cols-2 gap-12">
+                <a href="project-literaria.html" class="group" data-aos="fade-up">
+                    <div
+                        class="relative aspect-video rounded-[2rem] overflow-hidden border border-white/5 mb-6 shadow-2xl">
+                        <img src="./images/LiterariaLandingPage.png"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                            alt="Literaria">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                            <span class="text-white text-xs font-bold uppercase tracking-widest">View Case Study</span>
                         </div>
-                        <a href="#" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-amber-500 hover:text-slate-950 transition">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </a>
                     </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="group relative" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative aspect-video rounded-3xl overflow-hidden border border-white/10 mb-6">
-                        <img src="./images/NeuroDexLandingPage.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="NeuroDex">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
-                    </div>
-                    <div class="flex justify-between items-start">
-                        <div>
-                            <p class="text-amber-500 text-[10px] font-bold uppercase tracking-widest mb-1">AI Health Tech</p>
-                            <h3 class="text-2xl group-hover:text-amber-500 transition">NeuroDex</h3>
+                    <h3 class="text-2xl group-hover:text-amber-500 transition hero-title">Literaria</h3>
+                    <p class="secondary-text text-sm mt-2 font-mono">Capstone • Python • Flask</p>
+                </a>
+                <a href="project-neurodex.html" class="group" data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="relative aspect-video rounded-[2rem] overflow-hidden border border-white/5 mb-6 shadow-2xl">
+                        <img src="./images/NeuroDexLandingPage.png"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                            alt="NeuroDex">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8">
+                            <span class="text-white text-xs font-bold uppercase tracking-widest">View Case Study</span>
                         </div>
-                        <a href="#" class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:bg-amber-500 hover:text-slate-950 transition">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </a>
                     </div>
-                </div>
+                    <h3 class="text-2xl group-hover:text-amber-500 transition hero-title">NeuroDex</h3>
+                    <p class="secondary-text text-sm mt-2 font-mono">Medical AI • Python • TensorFlow</p>
+                </a>
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
         <section id="contact" class="py-24 mb-20">
-            <div class="glass-panel rounded-[40px] p-12 text-center relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 blur-[100px] rounded-full"></div>
-                <h2 class="text-5xl md:text-7xl mb-6">Let's <span class="text-gradient">Collaborate.</span></h2>
-                <p class="text-slate-400 max-w-lg mx-auto mb-10">Currently looking for new opportunities. My inbox is always open whether you have a question or just want to say hi.</p>
-                
-                <div class="flex flex-wrap justify-center gap-8">
-                    <a href="mailto:angelineostan@gmail.com" class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-2xl glass-panel flex items-center justify-center mb-2 group-hover:bg-amber-500 transition group-hover:text-slate-950">
-                            <i class="devicon-google-plain text-2xl"></i>
-                        </div>
-                        <span class="text-[10px] font-bold uppercase">Gmail</span>
+            <div class="glass-panel rounded-[2.5rem] p-10 md:p-20 text-center relative overflow-hidden shadow-xl">
+                <h2 class="text-4xl md:text-7xl mb-8 leading-tight hero-title">Let's <span
+                        class="text-amber-500">Connect.</span></h2>
+                <p class="secondary-text max-w-lg mx-auto mb-12">I'm currently looking for new opportunities. Whether
+                    you have a project in mind or just want to say hi, my inbox is open.</p>
+
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:angelineostan@gmail.com"
+                        class="w-16 h-16 glass-panel rounded-2xl flex items-center justify-center text-2xl hover:bg-amber-500 hover:text-slate-950 transition-all shadow-lg">
+                        <i class="devicon-google-plain"></i>
                     </a>
-                    <a href="#" class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-2xl glass-panel flex items-center justify-center mb-2 group-hover:bg-white transition group-hover:text-slate-950">
-                            <i class="devicon-github-original text-2xl"></i>
-                        </div>
-                        <span class="text-[10px] font-bold uppercase">Github</span>
+                    <a href="https://github.com/angelineostan"
+                        class="w-16 h-16 glass-panel rounded-2xl flex items-center justify-center text-2xl hover:bg-slate-950 dark:hover:bg-white dark:hover:text-slate-950 hover:text-white transition-all shadow-lg">
+                        <i class="devicon-github-original"></i>
                     </a>
-                    <a href="#" class="flex flex-col items-center group">
-                        <div class="w-16 h-16 rounded-2xl glass-panel flex items-center justify-center mb-2 group-hover:bg-blue-600 transition group-hover:text-white">
-                            <i class="devicon-linkedin-plain text-2xl"></i>
-                        </div>
-                        <span class="text-[10px] font-bold uppercase">LinkedIn</span>
+                    <a href="https://linkedin.com/in/angeline-ostan"
+                        class="w-16 h-16 glass-panel rounded-2xl flex items-center justify-center text-2xl hover:bg-blue-600 hover:text-white transition-all shadow-lg">
+                        <i class="devicon-linkedin-plain"></i>
                     </a>
                 </div>
             </div>
@@ -270,32 +347,27 @@
 
     </main>
 
-    <footer class="py-12 border-t border-white/5 text-center text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
-        &copy; 2026 Angeline Ostan. Crafted with passion.
+    <footer
+        class="py-12 border-t border-white/5 text-center text-xs font-bold uppercase tracking-[0.4em] secondary-text">
+        &copy; 2026 Angeline Ostan. Crafted with care.
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Theme Toggle Logic
-        const toggleBtn = document.getElementById('theme-toggle');
-        const body = document.body;
-        const icon = document.getElementById('theme-icon');
+        // Responsive Mobile Menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
 
-        toggleBtn.addEventListener('click', () => {
-            body.classList.toggle('light');
-            if(body.classList.contains('light')) {
-                body.style.backgroundColor = '#ffffff';
-                body.classList.replace('text-slate-300', 'text-slate-800');
-                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />';
-            } else {
-                body.style.backgroundColor = '#020617';
-                body.classList.replace('text-slate-800', 'text-slate-300');
-                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />';
-            }
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.remove('active'));
         });
     </script>
+
+    <script src="./javascript/theme-toggle.js"></script>
 </body>
+
 </html>

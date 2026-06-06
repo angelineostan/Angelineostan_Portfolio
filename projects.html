@@ -1,147 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | All Projects by Angeline Ostan</title>
 
-    <!-- Tailwind v4 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@900&family=Courier+Prime:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Courier+Prime:wght@400;700&display=swap"
         rel="stylesheet">
 
-    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Shared Theme -->
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/theme.css">
-
-    <style>
-        body,
-        .courier {
-            font-family: 'Courier Prime', monospace;
-        }
-
-        h1,
-        h2,
-        h3,
-        .archivo {
-            font-family: 'Archivo', sans-serif;
-            font-weight: 900;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .project-row {
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-    </style>
+    <link rel="stylesheet" href="./css/animations.css">
 </head>
 
-<body class="bg-[#0f172a] text-gray-300 antialiased">
+<body>
+    <script>if(localStorage.getItem('theme')==='light')document.body.classList.add('light');</script>
 
-    <!-- Navigation -->
-    <header id="main-nav"
-        class="w-full fixed top-0 bg-slate-900/80 backdrop-blur-xl z-[100] border-b border-white/5 transition-all duration-300">
-        <nav class="py-4">
-            <div class="mx-auto flex max-w-screen-xl items-center justify-between px-4">
-                <a href="index.html" class="text-2xl font-bold text-amber-500 archivo z-[200]">[A.]</a>
-                <div class="hidden md:block">
-                    <ul class="flex flex-row space-x-8 items-center text-base text-gray-400">
-                        <li><a href="index.html#about" class="hover:text-amber-400 transition duration-300">About</a>
-                        </li>
-                        <li><a href="index.html#education"
-                                class="hover:text-amber-400 transition duration-300">Education</a></li>
-                        <li><a href="index.html#tech-stack"
-                                class="hover:text-amber-400 transition duration-300">Stack</a></li>
-                        <li><a href="index.html#projects"
-                                class="hover:text-amber-400 transition duration-300">Projects</a></li>
-                        <li><a href="index.html#contact"
-                                class="hover:text-amber-400 transition duration-300">Contact</a></li>
-                        <li>
-                            <a href="Ostan_Resume_MULAVESTUDIOS.pdf" target="_blank"
-                                class="border-2 px-4 py-2 border-amber-500 rounded-sm text-amber-400 hover:bg-amber-500 hover:text-slate-900 hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all duration-300 font-bold">
-                                Resume
-                            </a>
-                        </li>
-                        <li>
-                            <button id="theme-toggle-desktop" class="theme-toggle" aria-label="Toggle theme">
-                                <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                                </svg>
-                                <svg id="moon-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                                </svg>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex items-center gap-3 md:hidden z-[200]">
-                    <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle theme">
-                        <svg class="sun-icon-m" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                        <svg class="moon-icon-m hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                        </svg>
-                    </button>
-                    <button id="menu-btn" class="text-amber-500 focus:outline-none">
-                        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16m-7 6h7" />
-                        </svg>
-                        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 hidden" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+    <div class="fixed inset-0 z-[-1] grid-bg"></div>
+    <div class="fixed top-[-10%] left-[-10%] w-[70%] md:w-[40%] h-[40%] bg-amber-500/10 blur-[120px] rounded-full">
+    </div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/10 blur-[120px] rounded-full"></div>
+
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-4xl z-[100]">
+        <nav class="glass-panel px-5 py-3 rounded-full flex items-center justify-between shadow-xl relative">
+            <a href="index.html" class="text-2xl font-archivo font-black text-amber-500">A<span
+                    class="text-current">.</span></a>
+
+            <ul class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-[0.2em] secondary-text">
+                <li><a href="index.html#about" class="hover:text-amber-500 transition">About</a></li>
+                <li><a href="index.html#tech" class="hover:text-amber-500 transition">Stack</a></li>
+                <li><a href="index.html#projects" class="hover:text-amber-500 transition">Works</a></li>
+                <li><a href="index.html#contact" class="hover:text-amber-500 transition">Contact</a></li>
+            </ul>
+
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle"
+                    class="p-2 secondary-text hover:bg-amber-500/10 rounded-full transition cursor-pointer">
+                    <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
+                <a href="Ostan_Resume.pdf" download
+                    class="hidden sm:block bg-amber-500 text-slate-950 px-5 py-2 rounded-full text-sm font-bold uppercase shadow-lg hover:scale-105 transition active:scale-95">Resume</a>
+
+                <button id="menu-toggle" class="md:hidden p-2 secondary-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="mobile-menu"
+                class="absolute top-[120%] left-0 w-full glass-panel rounded-3xl p-6 flex-col gap-4 md:hidden shadow-2xl">
+                <a href="index.html#about" class="text-sm font-bold uppercase tracking-widest py-2">About</a>
+                <a href="index.html#tech" class="text-sm font-bold uppercase tracking-widest py-2">Stack</a>
+                <a href="index.html#projects" class="text-sm font-bold uppercase tracking-widest py-2">Works</a>
+                <a href="index.html#contact" class="text-sm font-bold uppercase tracking-widest py-2">Contact</a>
             </div>
         </nav>
-        <div id="mobile-menu"
-            class="fixed top-0 left-0 w-full h-screen bg-slate-900 translate-x-full transition-transform duration-500 ease-in-out z-[150] flex flex-col justify-center items-center md:hidden">
-            <ul
-                class="flex flex-col space-y-10 items-center text-3xl archivo uppercase tracking-[0.2em] text-center text-gray-300">
-                <li><a href="index.html#about" class="mobile-link hover:text-amber-400 transition">About</a></li>
-                <li><a href="index.html#education" class="mobile-link hover:text-amber-400 transition">Education</a>
-                </li>
-                <li><a href="index.html#tech-stack" class="mobile-link hover:text-amber-400 transition">Stack</a></li>
-                <li><a href="index.html#projects" class="mobile-link hover:text-amber-400 transition">Projects</a></li>
-                <li><a href="index.html#contact" class="mobile-link hover:text-amber-400 transition">Contact</a></li>
-                <li class="pt-6">
-                    <a href="Ostan_Resume_MULAVESTUDIOS.pdf" target="_blank"
-                        class="border-2 px-10 py-4 border-amber-500 rounded-sm text-amber-400 hover:bg-amber-500 hover:text-slate-900 transition font-bold">Resume</a>
-                </li>
-            </ul>
-        </div>
     </header>
 
-    <main class="mx-auto max-w-screen-xl px-4 pt-32 pb-24">
+    <main class="max-w-screen-xl mx-auto px-6 pt-32 pb-24">
 
         <!-- Page Title -->
-        <header class="mb-20">
-            <h1 class="text-6xl md:text-8xl mb-4 text-white archivo">PROJECTS</h1>
-            <p class="courier text-amber-500 text-lg italic">A complete list of things I've built throughout my academic
-                journey.</p>
-        </header>
+        <section class="mb-20" data-aos="fade-up">
+            <h1 class="text-6xl md:text-8xl mb-6 hero-title">Projects</h1>
+            <p class="text-lg secondary-text max-w-lg">A complete collection of projects from my academic journey and
+                technical explorations.</p>
+        </section>
 
         <!-- Project Table -->
         <div class="overflow-x-auto">
@@ -152,7 +90,6 @@
                         <th class="py-4 px-2 font-normal">Project</th>
                         <th class="py-4 px-2 font-normal hidden md:table-cell text-center">Category</th>
                         <th class="py-4 px-2 font-normal hidden lg:table-cell">Built with</th>
-                        <th class="py-4 px-2 font-normal text-right">Link</th>
                     </tr>
                 </thead>
                 <tbody class="courier text-sm">
@@ -166,13 +103,9 @@
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Capstone</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Capstone Project</span>
                         </td>
                         <td class="py-6 px-2 hidden lg:table-cell text-gray-500">Flask · Firebase · Tailwind · JS</td>
-                        <td class="py-6 px-2 text-right">
-                            <a href="project-literaria.html"
-                                class="text-gray-600 group-hover:text-amber-500 transition text-xl">↗</a>
-                        </td>
                     </tr>
 
                     <!-- Project 2 -->
@@ -184,15 +117,9 @@
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">SIA
-                                102</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic Project</span>
                         </td>
-                        <td class="py-6 px-2 hidden lg:table-cell text-gray-500">Python · TensorFlow · Flask · MySQL
-                        </td>
-                        <td class="py-6 px-2 text-right">
-                            <a href="project-neurodex.html"
-                                class="text-gray-600 group-hover:text-amber-500 transition text-xl">↗</a>
-                        </td>
+                        <td class="py-6 px-2 hidden lg:table-cell text-gray-500">Python · TensorFlow · Flask · MySQL</td>
                     </tr>
 
                     <!-- Project 3 -->
@@ -200,16 +127,13 @@
                         <td class="py-6 px-2 text-amber-500 font-bold">2025</td>
                         <td class="py-6 px-2">
                             <a href="project-scholarship.html"
-                                class="font-bold text-white hover:text-amber-400 block text-base transition">Scholarship
-                                System</a>
+                                class="font-bold text-white hover:text-amber-400 block text-base transition">Scholarship System</a>
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">WS
-                                102</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic Project</span>
                         </td>
                         <td class="py-6 px-2 hidden lg:table-cell text-gray-500">PHP · MySQL · TailwindCSS</td>
-                        <td class="py-6 px-2 text-right text-gray-600">↗</td>
                     </tr>
 
                     <!-- Project 4 -->
@@ -221,11 +145,9 @@
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">WS
-                                101</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic Project</span>
                         </td>
                         <td class="py-6 px-2 hidden lg:table-cell text-gray-500">HTML · Bootstrap · JS</td>
-                        <td class="py-6 px-2 text-right text-gray-600">↗</td>
                     </tr>
 
                     <!-- Project 5 -->
@@ -233,16 +155,13 @@
                         <td class="py-6 px-2 text-amber-500 font-bold">2025</td>
                         <td class="py-6 px-2">
                             <a href="project-fureverhome.html"
-                                class="font-bold text-white hover:text-amber-400 block text-base transition">FurEver
-                                Home</a>
+                                class="font-bold text-white hover:text-amber-400 block text-base transition">FurEver Home</a>
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">WS
-                                101</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic Project</span>
                         </td>
                         <td class="py-6 px-2 hidden lg:table-cell text-gray-500">Android · Java · Firebase</td>
-                        <td class="py-6 px-2 text-right text-gray-600">↗</td>
                     </tr>
 
                     <!-- Project 6 -->
@@ -254,11 +173,9 @@
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">WS
-                                101</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic Project</span>
                         </td>
                         <td class="py-6 px-2 hidden lg:table-cell text-gray-500">Figma</td>
-                        <td class="py-6 px-2 text-right text-gray-600">↗</td>
                     </tr>
 
                     <!-- Project 7 -->
@@ -270,11 +187,9 @@
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">HCI
-                                102</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic Project</span>
                         </td>
                         <td class="py-6 px-2 hidden lg:table-cell text-gray-500">Figma</td>
-                        <td class="py-6 px-2 text-right text-gray-600">↗</td>
                     </tr>
 
                 </tbody>
@@ -283,17 +198,27 @@
 
     </main>
 
-    <footer class="py-12 text-center courier text-gray-600 text-xs border-t border-white/5">
-        <p>&copy; Angeline Ostan 2026</p>
+    <footer
+        class="py-12 border-t border-white/5 text-center text-xs font-bold uppercase tracking-[0.4em] secondary-text">
+        &copy; 2026 Angeline Ostan. Crafted with care.
     </footer>
 
-    <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
 
-    <script src="./javascript/mobile-nav.js"></script>
-    <script src="./javascript/theme-toggle.js"></script>
+        // Responsive Mobile Menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
 
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        });
+    </script>
+
+    <script src="./javascript/theme-toggle.js"></script>
 </body>
 
 </html>

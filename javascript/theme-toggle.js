@@ -1,49 +1,37 @@
 /**
  * Theme Toggle — Dark / Light Mode
  * Persists choice via localStorage across all pages.
+ *
+ * Theme class is applied to BOTH <html> and <body>:
+ *   - <html> gets it in <head> (prevents flash)
+ *   - <body> gets it after <body> opens (for body.light CSS selectors)
  */
 (function () {
-    const body = document.body;
-    const saved = localStorage.getItem('theme');
+    const SUN_PATH = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />';
+    const MOON_PATH = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />';
 
-    // Apply saved preference immediately (before DOM paints)
-    if (saved === 'light') body.classList.add('light');
+    function isLight() {
+        return document.documentElement.classList.contains('light');
+    }
 
-    function updateIcons() {
-        const isLight = body.classList.contains('light');
-        // Desktop icons
-        const sun = document.getElementById('sun-icon');
-        const moon = document.getElementById('moon-icon');
-        if (sun && moon) {
-            sun.classList.toggle('hidden', isLight);
-            moon.classList.toggle('hidden', !isLight);
-        }
-        // Mobile icons
-        document.querySelectorAll('.sun-icon-m').forEach(s => s.classList.toggle('hidden', isLight));
-        document.querySelectorAll('.moon-icon-m').forEach(m => m.classList.toggle('hidden', !isLight));
+    function updateIcon() {
+        var icon = document.getElementById('theme-icon');
+        if (icon) icon.innerHTML = isLight() ? MOON_PATH : SUN_PATH;
     }
 
     function toggleTheme() {
-        body.classList.toggle('light');
-        localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
-        updateIcons();
+        document.documentElement.classList.toggle('light');
+        document.body.classList.toggle('light');
+        localStorage.setItem('theme', isLight() ? 'light' : 'dark');
+        updateIcon();
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        updateIcons();
-        document.getElementById('theme-toggle-desktop')?.addEventListener('click', toggleTheme);
-        document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
+    // Update icon immediately (theme class already on <html> from head script)
+    updateIcon();
 
-        // Nav shrink on scroll
-        const nav = document.getElementById('main-nav');
-        if (nav) {
-            window.addEventListener('scroll', () => {
-                const inner = nav.querySelector('nav');
-                if (inner) {
-                    if (window.scrollY > 50) inner.classList.add('nav-scrolled');
-                    else inner.classList.remove('nav-scrolled');
-                }
-            });
-        }
+    document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.getElementById('theme-toggle');
+        if (btn) btn.addEventListener('click', toggleTheme);
+        updateIcon();
     });
 })();

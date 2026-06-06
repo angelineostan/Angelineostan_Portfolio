@@ -1,65 +1,7 @@
 /* ══════════════════════════════════════════ */
-/*  SHARED THEME — Dark Mode Base + Light    */
+/*  THEME — Light & Dark Mode Overrides      */
+/*  Only theme-switching rules live here     */
 /* ══════════════════════════════════════════ */
-
-/* ── Custom Scrollbar ── */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #0f172a; }
-::-webkit-scrollbar-thumb { background: #f59e0b33; border-radius: 999px; }
-::-webkit-scrollbar-thumb:hover { background: #f59e0b66; }
-
-/* ── Glass Card ── */
-.glass {
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-.glass-amber {
-    background: rgba(245, 158, 11, 0.06);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(245, 158, 11, 0.15);
-}
-
-/* ── Icon Glow on Hover ── */
-.icon-glow:hover {
-    filter: drop-shadow(0 0 8px currentColor);
-}
-
-/* ── Theme Toggle Button ── */
-.theme-toggle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.1);
-    background: rgba(255,255,255,0.05);
-    color: #f59e0b;
-}
-.theme-toggle:hover {
-    background: rgba(245,158,11,0.15);
-    border-color: rgba(245,158,11,0.3);
-    transform: rotate(15deg);
-}
-.theme-toggle svg { width: 20px; height: 20px; }
-
-/* ── Nav Shrink on Scroll ── */
-.nav-scrolled {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-}
-
-/* ── Smooth Theme Transition ── */
-body, body *, header, header * {
-    transition-property: background-color, color, border-color, box-shadow, opacity;
-    transition-duration: 0.35s;
-    transition-timing-function: ease;
-}
 
 /* ══════════════════════════════════════════ */
 /*         LIGHT MODE OVERRIDES              */
@@ -145,7 +87,11 @@ body.light .bg-gray-900 { background-color: #1e293b !important; }
 /* Footer */
 body.light footer { border-top-color: rgba(0,0,0,0.06) !important; color: #9ca3af !important; }
 
-/* ── Project Detail Pages ── */
+/* ══════════════════════════════════════════ */
+/*         DARK MODE OVERRIDES               */
+/*   (for elements that default to light)    */
+/* ══════════════════════════════════════════ */
+
 /* Tech icons in dark mode: white instead of black */
 body:not(.light) .tech-icon {
     filter: grayscale(100%) brightness(3) !important;

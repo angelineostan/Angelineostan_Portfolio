@@ -1,0 +1,129 @@
+:root {
+    --accent: #f59e0b;
+    --bg-color: #020617;
+    --text-main: #f1f5f9;
+    /* Light text for Dark BG */
+    --text-secondary: #94a3b8;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+.light {
+    --bg-color: #ffffff;
+    --text-main: #0f172a;
+    /* Deep Dark text for Light BG */
+    --text-secondary: #475569;
+    --glass: rgba(0, 0, 0, 0.03);
+    --glass-border: rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Courier Prime', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+.hero-title {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: var(--text-main);
+}
+
+.secondary-text {
+    color: var(--text-secondary);
+}
+
+/* ── Glass Panels (uses CSS vars) ── */
+.glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+}
+
+/* ── Glass Cards (hardcoded dark-mode base) ── */
+.glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glass-amber {
+    background: rgba(245, 158, 11, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+}
+
+/* ── Icon Glow on Hover ── */
+.icon-glow:hover {
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* ── Theme Toggle Button ── */
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    color: #f59e0b;
+}
+.theme-toggle:hover {
+    background: rgba(245,158,11,0.15);
+    border-color: rgba(245,158,11,0.3);
+}
+.theme-toggle svg { width: 20px; height: 20px; }
+
+/* ── Nav Shrink on Scroll ── */
+.nav-scrolled {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+/* ── Project Case Study Tech Icons ── */
+.tech-icon {
+    font-size: 1.8rem;
+    filter: grayscale(100%) brightness(0);
+    opacity: 0.7;
+}
+
+.tech-label {
+    font-size: 9px;
+    color: #9ca3af;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    text-align: center;
+    line-height: 1.1;
+}
+
+/* ── Grid Background ── */
+.grid-bg {
+    background-image: radial-gradient(rgba(245, 158, 11, 0.15) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* ── Mobile Menu ── */
+#mobile-menu {
+    display: none;
+}
+
+#mobile-menu.active {
+    display: flex;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #f59e0b33; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #f59e0b66; }
