@@ -127,3 +127,74 @@ h4,
 ::-webkit-scrollbar-track { background: #0f172a; }
 ::-webkit-scrollbar-thumb { background: #f59e0b33; border-radius: 999px; }
 ::-webkit-scrollbar-thumb:hover { background: #f59e0b66; }
+
+/* ══════════════════════════════════════════ */
+/*  MARQUEE TECH BANNER                      */
+/* ══════════════════════════════════════════ */
+
+.marquee-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    /* Fade edges so items don't pop in/out abruptly */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.marquee-row {
+    overflow: hidden;
+    width: 100%;
+    padding: 0.75rem 0;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 1.25rem;
+    width: max-content;
+    will-change: transform;
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 9999px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease;
+}
+
+.marquee-item:hover {
+    border-color: rgba(245, 158, 11, 0.35);
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.12);
+}
+
+.marquee-item i {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+    transition: filter 0.3s ease;
+}
+
+.marquee-item:hover i {
+    filter: drop-shadow(0 0 6px currentColor);
+}
+
+.marquee-item span {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: -0.01em;
+    color: var(--text-main);
+    transition: color 0.4s ease;
+}
+
+/* Pause on hover for readability */
+.marquee-row:hover .marquee-track {
+    animation-play-state: paused;
+}

@@ -22,7 +22,7 @@
 
     <!-- Theme flash prevention: apply theme class BEFORE first paint -->
     <script>
-        (function(){
+        (function () {
             var t = localStorage.getItem('theme');
             if (t === 'light') document.documentElement.classList.add('light');
             document.documentElement.classList.add('no-transitions');
@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <script>if(localStorage.getItem('theme')==='light'){document.documentElement.classList.add('light');document.body.classList.add('light');}</script>
+    <script>if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.add('light'); document.body.classList.add('light'); }</script>
 
     <div class="fixed inset-0 z-[-1] grid-bg"></div>
     <div class="fixed top-[-10%] left-[-10%] w-[70%] md:w-[40%] h-[40%] bg-amber-500/10 blur-[120px] rounded-full">
@@ -312,7 +312,8 @@
 
         updateSlider();
     </script>
-    <script src="./javascript/theme-toggle.js"></script>
+    <script src="./javascript/theme-toggle.js"></script>
+
 </body>
 
 </html>

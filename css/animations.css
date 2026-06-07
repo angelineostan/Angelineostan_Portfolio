@@ -108,3 +108,30 @@ h4,
 .project-row {
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ── Marquee Scroll Animations ── */
+@keyframes marquee-scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.marquee-left {
+    animation: marquee-scroll-left 30s linear infinite;
+}
+
+.marquee-right {
+    animation: marquee-scroll-right 30s linear infinite;
+}

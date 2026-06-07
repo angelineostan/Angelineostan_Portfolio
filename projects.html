@@ -22,7 +22,7 @@
 
     <!-- Theme flash prevention: apply theme class BEFORE first paint -->
     <script>
-        (function(){
+        (function () {
             var t = localStorage.getItem('theme');
             if (t === 'light') document.documentElement.classList.add('light');
             document.documentElement.classList.add('no-transitions');
@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <script>if(localStorage.getItem('theme')==='light'){document.documentElement.classList.add('light');document.body.classList.add('light');}</script>
+    <script>if (localStorage.getItem('theme') === 'light') { document.documentElement.classList.add('light'); document.body.classList.add('light'); }</script>
 
     <div class="fixed inset-0 z-[-1] grid-bg"></div>
     <div class="fixed top-[-10%] left-[-10%] w-[70%] md:w-[40%] h-[40%] bg-amber-500/10 blur-[120px] rounded-full">
@@ -104,99 +104,100 @@
                 <tbody class="courier text-sm">
 
                     <!-- Project 1 -->
-                    <tr class="project-row border-b border-white/5 group">
+                    <tr class="project-row border-b border-white/5 group cursor-pointer" data-href="project-literaria.html">
                         <td class="py-6 px-2 text-amber-500 font-bold">2025</td>
                         <td class="py-6 px-2">
-                            <a href="project-literaria.html"
-                                class="font-bold text-white hover:text-amber-400 block text-base transition">Literaria</a>
+                            <span class="font-bold text-white group-hover:text-amber-400 block text-base transition">Literaria</span>
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Capstone Project</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Capstone
+                                Project</span>
                         </td>
                         <td class="py-6 px-2 hidden lg:table-cell text-gray-500">Flask · Firebase · Tailwind · JS</td>
                     </tr>
 
                     <!-- Project 2 -->
-                    <tr class="project-row border-b border-white/5 group">
+                    <tr class="project-row border-b border-white/5 group cursor-pointer" data-href="project-neurodex.html">
                         <td class="py-6 px-2 text-amber-500 font-bold">2025</td>
                         <td class="py-6 px-2">
-                            <a href="project-neurodex.html"
-                                class="font-bold text-white hover:text-amber-400 block text-base transition">NeuroDex</a>
+                            <span class="font-bold text-white group-hover:text-amber-400 block text-base transition">NeuroDex</span>
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic Project</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic
+                                Project</span>
                         </td>
-                        <td class="py-6 px-2 hidden lg:table-cell text-gray-500">Python · TensorFlow · Flask · MySQL</td>
+                        <td class="py-6 px-2 hidden lg:table-cell text-gray-500">Python · TensorFlow · Flask · MySQL
+                        </td>
                     </tr>
 
                     <!-- Project 3 -->
-                    <tr class="project-row border-b border-white/5 group">
+                    <tr class="project-row border-b border-white/5 group cursor-pointer" data-href="project-scholarship.html">
                         <td class="py-6 px-2 text-amber-500 font-bold">2025</td>
                         <td class="py-6 px-2">
-                            <a href="project-scholarship.html"
-                                class="font-bold text-white hover:text-amber-400 block text-base transition">Scholarship System</a>
+                            <span class="font-bold text-white group-hover:text-amber-400 block text-base transition">Scholarship System</span>
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic Project</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic
+                                Project</span>
                         </td>
                         <td class="py-6 px-2 hidden lg:table-cell text-gray-500">PHP · MySQL · TailwindCSS</td>
                     </tr>
 
                     <!-- Project 4 -->
-                    <tr class="project-row border-b border-white/5 group">
+                    <tr class="project-row border-b border-white/5 group cursor-pointer" data-href="project-sweetbites.html">
                         <td class="py-6 px-2 text-amber-500 font-bold">2025</td>
                         <td class="py-6 px-2">
-                            <a href="project-sweetbites.html"
-                                class="font-bold text-white hover:text-amber-400 block text-base transition">SweetBites</a>
+                            <span class="font-bold text-white group-hover:text-amber-400 block text-base transition">SweetBites</span>
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic Project</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic
+                                Project</span>
                         </td>
                         <td class="py-6 px-2 hidden lg:table-cell text-gray-500">HTML · Bootstrap · JS</td>
                     </tr>
 
                     <!-- Project 5 -->
-                    <tr class="project-row border-b border-white/5 group">
+                    <tr class="project-row border-b border-white/5 group cursor-pointer" data-href="project-fureverhome.html">
                         <td class="py-6 px-2 text-amber-500 font-bold">2025</td>
                         <td class="py-6 px-2">
-                            <a href="project-fureverhome.html"
-                                class="font-bold text-white hover:text-amber-400 block text-base transition">FurEver Home</a>
+                            <span class="font-bold text-white group-hover:text-amber-400 block text-base transition">FurEver Home</span>
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic Project</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic
+                                Project</span>
                         </td>
                         <td class="py-6 px-2 hidden lg:table-cell text-gray-500">Android · Java · Firebase</td>
                     </tr>
 
                     <!-- Project 6 -->
-                    <tr class="project-row border-b border-white/5 group">
+                    <tr class="project-row border-b border-white/5 group cursor-pointer" data-href="project-spacescout.html">
                         <td class="py-6 px-2 text-amber-500 font-bold">2024</td>
                         <td class="py-6 px-2">
-                            <a href="project-spacescout.html"
-                                class="font-bold text-white hover:text-amber-400 block text-base transition">SpaceScout</a>
+                            <span class="font-bold text-white group-hover:text-amber-400 block text-base transition">SpaceScout</span>
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic Project</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic
+                                Project</span>
                         </td>
                         <td class="py-6 px-2 hidden lg:table-cell text-gray-500">Figma</td>
                     </tr>
 
                     <!-- Project 7 -->
-                    <tr class="project-row border-b border-white/5 group">
+                    <tr class="project-row border-b border-white/5 group cursor-pointer" data-href="project-quicktrike.html">
                         <td class="py-6 px-2 text-amber-500 font-bold">2024</td>
                         <td class="py-6 px-2">
-                            <a href="project-quicktrike.html"
-                                class="font-bold text-white hover:text-amber-400 block text-base transition">QuickTrike</a>
+                            <span class="font-bold text-white group-hover:text-amber-400 block text-base transition">QuickTrike</span>
                         </td>
                         <td class="py-6 px-2 hidden md:table-cell text-center">
                             <span
-                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic Project</span>
+                                class="border border-white/10 text-gray-400 px-3 py-1 rounded-full text-[10px] uppercase">Academic
+                                Project</span>
                         </td>
                         <td class="py-6 px-2 hidden lg:table-cell text-gray-500">Figma</td>
                     </tr>
@@ -225,9 +226,17 @@
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => mobileMenu.classList.remove('active'));
         });
+
+        // Clickable table rows — navigate to data-href on click
+        document.querySelectorAll('tr[data-href]').forEach(row => {
+            row.addEventListener('click', () => {
+                window.location.href = row.dataset.href;
+            });
+        });
     </script>
 
-    <script src="./javascript/theme-toggle.js"></script>
+    <script src="./javascript/theme-toggle.js"></script>
+
 </body>
 
 </html>
