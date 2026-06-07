@@ -133,3 +133,15 @@ body:not(.light) #btnPrev {
     border-color: rgba(255,255,255,0.1) !important;
     color: #f59e0b !important;
 }
+
+/* Contact icon hover — override theme text-white rules */
+.contact-icon-link:hover {
+    color: inherit;
+    transform: translateY(-3px);
+}
+body.light .contact-icon-link:hover {
+    color: white !important;
+}
+body.light .contact-icon-link[href^="mailto"]:hover {
+    color: #0f172a !important;
+}

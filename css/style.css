@@ -178,7 +178,7 @@ h4,
 .marquee-item i {
     font-size: 1.75rem;
     flex-shrink: 0;
-    color: #ffffff;
+    color: var(--text-main);
     transition: filter 0.3s ease;
 }
 
