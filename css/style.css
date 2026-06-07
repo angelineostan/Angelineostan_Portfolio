@@ -18,7 +18,7 @@
 }
 
 body {
-    font-family: 'Courier Prime', monospace;
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-main);
     overflow-x: hidden;

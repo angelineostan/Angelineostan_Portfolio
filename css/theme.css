@@ -92,13 +92,13 @@ body.light footer { border-top-color: rgba(0,0,0,0.06) !important; color: #9ca3a
 /*   (for elements that default to light)    */
 /* ══════════════════════════════════════════ */
 
-/* Tech icons in dark mode: white instead of black */
+/* Tech icons in dark mode: uniform light color */
 body:not(.light) .tech-icon {
-    filter: grayscale(100%) brightness(3) !important;
-    opacity: 0.5;
+    filter: brightness(0) invert(1) !important;
+    opacity: 0.8;
 }
 body:not(.light) .group:hover .tech-icon {
-    filter: grayscale(0%) brightness(1) !important;
+    filter: brightness(0) invert(1) !important;
     opacity: 1;
 }
 body:not(.light) .group:hover .tech-label {
