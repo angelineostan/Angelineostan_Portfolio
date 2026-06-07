@@ -3,6 +3,16 @@
 /*  Single source of truth for all motion    */
 /* ══════════════════════════════════════════ */
 
+/* ── Suppress transitions on page load ── */
+/* Prevents the dark→light flash when the page first renders.
+   Removed by JS after the first animation frame. */
+.no-transitions,
+.no-transitions *,
+.no-transitions *::before,
+.no-transitions *::after {
+    transition: none !important;
+}
+
 /* ── Keyframe Animations ── */
 @keyframes float {
 
@@ -32,7 +42,7 @@ body {
 
 /* ── Glass Panel Transition ── */
 .glass-panel {
-    transition: all 0.4s ease;
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* ── Smooth Theme Transitions ── */
