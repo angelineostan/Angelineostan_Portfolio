@@ -12,29 +12,46 @@ body.light {
 }
 
 /* Scrollbar */
-body.light::-webkit-scrollbar-track { background: #f9fafb; }
+body.light::-webkit-scrollbar-track {
+    background: #f9fafb;
+}
 
 /* Nav */
 body.light #main-nav {
-    background: rgba(255,255,255,0.85) !important;
-    border-bottom-color: rgba(0,0,0,0.06) !important;
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-bottom-color: rgba(0, 0, 0, 0.06) !important;
 }
-body.light #main-nav ul { color: #6b7280; }
-body.light #main-nav a:hover { color: #d97706 !important; }
-body.light #main-nav .text-amber-500 { color: #d97706; }
+
+body.light #main-nav ul {
+    color: #6b7280;
+}
+
+body.light #main-nav a:hover {
+    color: #d97706 !important;
+}
+
+body.light #main-nav .text-amber-500 {
+    color: #d97706;
+}
 
 /* Mobile menu */
-body.light #mobile-menu { background: #ffffff !important; }
-body.light #mobile-menu ul { color: #374151 !important; }
+body.light #mobile-menu {
+    background: #ffffff !important;
+}
+
+body.light #mobile-menu ul {
+    color: #374151 !important;
+}
 
 /* Theme toggle in light mode */
 body.light .theme-toggle {
-    border-color: rgba(0,0,0,0.1);
-    background: rgba(0,0,0,0.04);
+    border-color: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.04);
     color: #d97706;
 }
+
 body.light .theme-toggle:hover {
-    background: rgba(245,158,11,0.1);
+    background: rgba(245, 158, 11, 0.1);
 }
 
 /* Glass cards → light glass */
@@ -42,50 +59,101 @@ body.light .glass {
     background: rgba(0, 0, 0, 0.02) !important;
     border-color: rgba(0, 0, 0, 0.08) !important;
 }
+
 body.light .glass:hover {
-    border-color: rgba(245,158,11,0.3) !important;
+    border-color: rgba(245, 158, 11, 0.3) !important;
 }
+
 body.light .glass-amber {
     background: rgba(245, 158, 11, 0.04) !important;
     border-color: rgba(245, 158, 11, 0.12) !important;
 }
 
 /* Headings & Text */
-body.light h1, body.light h2, body.light h3, body.light h4 {
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4 {
     color: #1e293b;
 }
-body.light .text-white { color: #1e293b !important; }
-body.light .text-gray-300 { color: #4b5563 !important; }
-body.light .text-gray-400 { color: #6b7280 !important; }
-body.light .text-gray-500 { color: #9ca3af !important; }
-body.light .text-gray-600 { color: #4b5563 !important; }
+
+body.light .text-white {
+    color: #1e293b !important;
+}
+
+body.light .text-gray-300 {
+    color: #4b5563 !important;
+}
+
+body.light .text-gray-400 {
+    color: #6b7280 !important;
+}
+
+body.light .text-gray-500 {
+    color: #9ca3af !important;
+}
+
+body.light .text-gray-600 {
+    color: #4b5563 !important;
+}
 
 /* Section lines */
-body.light h3 .bg-white\/10 { background-color: rgba(0,0,0,0.08) !important; }
+body.light h3 .bg-white\/10 {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+}
 
 /* Backgrounds */
 body.light .bg-gray-50,
-body.light .bg-slate-800 { background-color: #f9fafb !important; }
-body.light .bg-white\/5 { background: rgba(0,0,0,0.05) !important; }
+body.light .bg-slate-800 {
+    background-color: #f9fafb !important;
+}
+
+body.light .bg-white\/5 {
+    background: rgba(0, 0, 0, 0.05) !important;
+}
 
 /* Borders */
-body.light .border-white\/5 { border-color: rgba(0,0,0,0.06) !important; }
-body.light .border-gray-200 { border-color: #e5e7eb !important; }
+body.light .border-white\/5 {
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+body.light .border-gray-200 {
+    border-color: #e5e7eb !important;
+}
 
 /* Amber accents stay */
-body.light .text-amber-500 { color: #d97706 !important; }
-body.light .text-amber-400 { color: #d97706 !important; }
-body.light .text-amber-600 { color: #d97706 !important; }
+body.light .text-amber-500 {
+    color: #d97706 !important;
+}
+
+body.light .text-amber-400 {
+    color: #d97706 !important;
+}
+
+body.light .text-amber-600 {
+    color: #d97706 !important;
+}
 
 /* CTA buttons */
-body.light a.border-amber-500 { color: #d97706; }
-body.light a.border-amber-500:hover { background-color: #f59e0b; color: #ffffff !important; }
+body.light a.border-amber-500 {
+    color: #d97706;
+}
+
+body.light a.border-amber-500:hover {
+    background-color: #f59e0b;
+    color: #ffffff !important;
+}
 
 /* GitHub / dark buttons */
-body.light .bg-gray-900 { background-color: #1e293b !important; }
+body.light .bg-gray-900 {
+    background-color: #1e293b !important;
+}
 
 /* Footer */
-body.light footer { border-top-color: rgba(0,0,0,0.06) !important; color: #9ca3af !important; }
+body.light footer {
+    border-top-color: rgba(0, 0, 0, 0.06) !important;
+    color: #9ca3af !important;
+}
 
 /* ══════════════════════════════════════════ */
 /*         DARK MODE OVERRIDES               */
@@ -97,10 +165,12 @@ body:not(.light) .tech-icon {
     filter: brightness(0) invert(1) !important;
     opacity: 0.8;
 }
+
 body:not(.light) .group:hover .tech-icon {
     filter: brightness(0) invert(1) !important;
     opacity: 1;
 }
+
 body:not(.light) .group:hover .tech-label {
     color: #d1d5db !important;
 }
@@ -109,28 +179,32 @@ body:not(.light) .group:hover .tech-label {
 body:not(.light) .project-row:hover {
     background-color: rgba(245, 158, 11, 0.06) !important;
 }
+
 body.light .project-row:hover {
     background-color: rgba(245, 158, 11, 0.04);
 }
 
 /* Image containers in dark mode */
 body:not(.light) .bg-gray-100 {
-    background-color: rgba(255,255,255,0.05) !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
 }
+
 body:not(.light) .border-gray-200 {
-    border-color: rgba(255,255,255,0.1) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
 }
+
 body:not(.light) .border-gray-100 {
-    border-color: rgba(255,255,255,0.05) !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
 }
+
 body:not(.light) .border-gray-50 {
-    border-color: rgba(255,255,255,0.04) !important;
+    border-color: rgba(255, 255, 255, 0.04) !important;
 }
 
 /* Gallery prev button in dark */
 body:not(.light) #btnPrev {
-    background-color: rgba(15,23,42,0.9) !important;
-    border-color: rgba(255,255,255,0.1) !important;
+    background-color: rgba(15, 23, 42, 0.9) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
     color: #f59e0b !important;
 }
 
@@ -139,9 +213,11 @@ body:not(.light) #btnPrev {
     color: inherit;
     transform: translateY(-3px);
 }
+
 body.light .contact-icon-link:hover {
     color: white !important;
 }
+
 body.light .contact-icon-link[href^="mailto"]:hover {
     color: #0f172a !important;
 }
