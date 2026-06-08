@@ -102,6 +102,17 @@ h4,
     display: flex;
 }
 
+/* Blur & Dim Background when Mobile Menu is Active */
+body:has(#mobile-menu.active) main,
+body:has(#mobile-menu.active) footer {
+    filter: blur(10px) brightness(0.6);
+    pointer-events: none;
+}
+
+main, footer {
+    transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 #mobile-menu a {
     color: var(--text-main) !important;
     transition: color 0.2s ease;
